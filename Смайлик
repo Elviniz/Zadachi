@@ -1,0 +1,80 @@
+import turtle
+import time
+import math
+
+turtle.shape('turtle')
+turtle.penup()
+turtle.goto(-300,250)
+turtle.pendown()
+turtle.fillcolor('yellow')
+turtle.begin_fill()
+turtle.circle(70)
+turtle.end_fill()
+turtle.penup()
+turtle.goto(-330,360)
+turtle.pendown()
+turtle.width(8)
+turtle.fillcolor('black')
+turtle.right(45)
+turtle.forward(30)
+turtle.penup()
+turtle.goto(-310,360)
+turtle.pendown()
+turtle.right(95)
+turtle.forward(30)
+turtle.pendown()
+turtle.penup()
+turtle.goto(-275,360)
+turtle.pendown()
+turtle.left(95)
+turtle.forward(30)
+turtle.penup()
+turtle.goto(-255,360)
+turtle.pendown()
+turtle.left(-95)
+turtle.forward(30)
+turtle.penup()
+turtle.width(5)
+turtle.left(-130)
+turtle.goto(-260,270)
+turtle.pendown()
+turtle.color('red')
+turtle.circle(40,180)
+turtle.penup()
+turtle.width(1)
+turtle.color('black')
+turtle.goto(0,0)
+turtle.pendown()
+
+n = int(turtle.numinput('Да Вы красавчик', 'Введите номер фигуры:', minval=1, maxval=4))
+
+if n == 1:
+    u = int(turtle.numinput('Остренького захотел?', 'Задай мне угол:', minval=1, maxval=179))
+    turtle.forward(150)
+    turtle.left(180-u)
+    turtle.forward(150)
+    turtle.goto(0,0)
+
+if n == 2:
+    s = int(turtle.numinput('Я знал!', 'Какой длины хочешь:', minval=10))
+    a = 0
+    while a < 4:
+        turtle.forward(s)
+        turtle.left(90)
+        a += 1
+
+if n == 3:
+    r = int(turtle.numinput('Выбрал круглого?', 'Вводи теперь радиус:', minval=10))
+    turtle.circle(r)
+
+if n == 4:
+    m = int(turtle.numinput('Ух какая звездочка', 'Сколько углов?:', minval=5))
+    def stars(m):
+        turtle.left(180 - (180 / m))
+        turtle.forward(100)
+    x = 1
+    while x <= m:
+        stars(m)
+        x += 1
+
+time.sleep(3)
